@@ -23,8 +23,9 @@ app.set("layout", "layouts/layout");
 app.use(expresslayout);
 
 // SETTING VIEW
-app.set('view', path.join(__dirname,'views'));
+app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 
 // SETTING BODYPARSER
 app.use(bodyParser.json());

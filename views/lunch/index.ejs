@@ -1,0 +1,61 @@
+<div class="container">
+
+
+  <div class="message">
+    <% if (messages.error) { %>
+      <p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+       <p style="color: green;"><%- messages.success %></p>
+<% } %>
+  </div>
+
+  <table class="table " style="width:100%; margin:0px auto">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Cohort</th>
+        <th>Meal Option</th>
+        <th>Meal Type</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+     <% 
+        if (data.length) { 
+          for(var i = 0; i < data.length; i++){
+     %>
+          <tr>
+            <td> <%= data[i].id%> </td>
+            <td> <%= data[i].f_nm%> </td>
+            <td> <%= data[i].l_nm%> </td>
+            <td> <%= data[i].cohort%> </td>
+            <td> <%= data[i].opt_nm%> </td>
+            <td> <%= data[i].cat_nm%> </td>
+            <td> <%= new Date(data[i].date).toLocaleString('sv-SE')%> </td>
+            <td>
+              <a class="button" href="/lunch/edit/<%= data[i].id %>">Edit &ensp;</a>
+              <a class="button" href="/lunch/delete/<%= data[i].id %>">Delete</a>
+              </td>
+          </tr>
+        <%
+           }
+            } else { 
+        %>
+
+        <tr>
+          <td colspan="4"> NO STUDENTS DATA !!!!</td>
+        </tr>
+
+        <% } %>
+                   
+    </tbody>
+  </table>
+  
+</body>
+</html>
+</div>

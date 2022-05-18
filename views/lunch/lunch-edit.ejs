@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="message">
+    <% if (messages.error) { %>
+      <p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+       <p style="color: green;"><%- messages.success %></p>
+<% } %>
+  </div>
+  <table class="table " style="width:100%; margin:0px auto">
+    <thead>
+      <tr>
+        <th>Meal Option</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <form action="/lunch/update" method="post" >
+            <td>
+              <select name="option">
+                <option selected disable value="<%= data.meal_opt_id %>" > <%= data.opt_nm%> </option>
+                <option value="1">Fried Chicken</option>
+                <option value="2">Jerked Pork</option>
+                <option value="3">Curried Goat</option>
+                <option value="4">Polenta</option>
+                <option value="5">Rice and Peas</option>
+                <option value="6">Festival</option>
+                <option value="7">Corn</option>
+                <option value="8">Carrot Juice</option>
+                <option value="9">Mango Juice</option>
+              </select> 
+            </td>
+            <!-- <td>
+               <select name="category" >
+                  <option value="1">Protein</option>
+                  <option value="2">Starch</option>
+                  <option value="3">Sides</option>
+                  <option value="4">Beverage</option>
+                  <option selected value="<%= data.meal_cat_id %>" > <%= data.cat_nm%> </option>
+                </select> 
+          </td> -->
+            <td> 
+              <input type="datetime" name="date" value="<%= new Date(data.date).toLocaleString('sv-SE')%> "> </td>
+              <input type="hidden" name="lunchId" value="<%= data.id %>">
+              <input type="hidden" name="traineeId" value="<%= data.trainee_id %>">
+            <td>
+              <button type="submit" class="button" style="width: 100% ;">Done</button>
+              </td>
+          </tr>
+    </tbody>
+  </form>
+  </table>
+  
+</body>
+</html>
+</div>

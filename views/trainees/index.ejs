@@ -1,0 +1,42 @@
+<div class="container">
+  <table class="table " style="width:90%; margin:0px auto">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Cohort</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+     <% 
+        if (data.length) { 
+          for(var i = 0; i < data.length; i++){
+     %>
+          <tr>
+            <td> <%= data[i].id%> </td>
+            <td> <%= data[i].f_nm%> </td>
+            <td> <%= data[i].l_nm%> </td>
+            <td> <%= data[i].cohort%> </td>
+            <td>
+              <a class="button" href="/lunch/show/<%= data[i].id %>">Show &ensp;</a>
+              </td>
+          </tr>
+        <%
+           }
+            } else { 
+        %>
+
+        <tr>
+          <td colspan="4"> NO STUDENTS DATA !!!!</td>
+        </tr>
+
+        <% } %>
+                   
+    </tbody>
+  </table>
+  
+</body>
+</html>
+</div>

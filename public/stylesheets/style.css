@@ -1,0 +1,53 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: rgb(250, 250, 247);
+}
+
+.button{
+  outline: none;
+  background-color: transparent;
+  border: 0.1px solid lightgray;
+  font-family: Mukta , sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 300ms ease 0ms;
+  border-radius: 3px;
+  color: black;
+  margin-bottom: 2px;
+  margin-left: 3px;
+  padding: 5px;
+}
+
+a{
+  text-decoration: none;
+}
+
+th{
+  font-family: Mukta , sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  text-align: center;
+}
+
+td{
+  text-align: center;
+  font-family: Mukta , sans-serif;
+  font-weight: 100;
+  font-size:  18px;
+}
+
+td input , td select{
+  outline: none;
+  border:  none;
+  background-color: transparent;
+  text-align: center;
+}
